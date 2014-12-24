@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+<form method="POST">
+<select id="first-select-menu" name="first-select">
+        <option>Make a Selection</option>
+            <option value="1">Option One</option>
+            <option value="2">Option Two</option>
+            <option value="3">Option Three</option>
+            <option value="4">Option Four</option>
+            <option value="5">Option Five</option>
+   </select>
+  
+    <div id="optionOneFields">
+        <p>Option One Fields Go Here</p>
+    </div>
+    <div id="optionTwoFields">
+        <p>Option Two Fields Go Here</p>
+    </div>
+    <div id="optionThreeFields">
+        <p>Option Three Fields Go Here</p>
+    </div>
+    <div id="optionFourFields">
+        <p>Option Four Fields Go Here</p>
+    </div>
+    <div id="optionFiveFields">
+        <p>Option Five Fields Go Here</p>
+    </div>
+    <p>
+        <input type="submit" value="SUBMIT" />
+    </p>
+</form>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+	$("#optionOneFields").css("display","none");
+	$("#optionTwoFields").css("display","none");
+	$("#optionThreeFields").css("display","none");
+	$("#optionFourFields").css("display","none");
+	$("#optionFiveFields").css("display","none");
+    toggleFields(); 
+    $("#first-select-menu").change(function () {
+        toggleFields();
+    });
+});
+function toggleFields() {
+    if ($("#first-select-menu").val() == 1)
+        $("#optionOneFields").slideDown();
+    else
+        $("#optionOneFields").slideUp();
+	if ($("#first-select-menu").val() == 2)
+        $("#optionTwoFields").slideDown();
+    else
+        $("#optionTwoFields").slideUp();
+	if ($("#first-select-menu").val() == 3)
+        $("#optionThreeFields").slideDown();
+    else
+        $("#optionThreeFields").slideUp();
+	if ($("#first-select-menu").val() == 4)
+        $("#optionFourFields").slideDown();
+    else
+        $("#optionFourFields").slideUp();
+	if ($("#first-select-menu").val() == 5)
+        $("#optionFiveFields").slideDown();
+    else
+        $("#optionFiveFields").slideUp();	
+}		
+
+</script>
+
+</body>
+</html>
